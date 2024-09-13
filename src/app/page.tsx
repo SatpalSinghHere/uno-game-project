@@ -1,0 +1,9 @@
+import VisibleCards from "@/components/VisibleCards";
+
+export default function Home() {
+  return (
+    <div>
+      HOME PAGE
+    </div>
+  );
+}
