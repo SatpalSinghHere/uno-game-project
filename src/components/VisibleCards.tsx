@@ -17,11 +17,11 @@ const VisibleCards = () => {
   const [cards, setCards] = React.useState([]);
   return (
     <div className='bg-slate-500 w-3/5 h-1/5 relative flex justify-center items-center'>
-      <Card className={"h-full w-auto absolute translate-x-[-56px]"} color={green} value={"4"} />
-      <Card className={"h-full w-auto absolute translate-x-[-28px]"} color={blue} value={"7"} />
-      <Card className={"h-full w-auto absolute "} color={yellow} value={"2"} />
-      <Card className={"h-full w-auto absolute translate-x-[28px]"} color={red} value={"9"} />
-      <Card className={"h-full w-auto absolute translate-x-[56px]"} color={green} value={"10"} />     
+      <Card className={"h-full w-auto absolute translate-x-[-56px] hover:translate-y-[-8px] duration-75 cursor-pointer"} color={green} value={"4"} />
+      <Card className={"h-full w-auto absolute translate-x-[-28px] hover:translate-y-[-8px] duration-75 cursor-pointe"} color={blue} value={"7"} />
+      <Card className={"h-full w-auto absolute hover:translate-y-[-8px] duration-75 cursor-pointer"} color={yellow} value={"2"} />
+      <Card className={"h-full w-auto absolute translate-x-[28px] hover:translate-y-[-8px] duration-75 cursor-pointer"} color={red} value={"9"} />
+      <Card className={"h-full w-auto absolute translate-x-[56px] hover:translate-y-[-8px] duration-75 cursor-pointer"} color={green} value={"10"} />     
     </div>
   );
 }
