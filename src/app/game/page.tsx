@@ -14,7 +14,7 @@ const page = () => {
         setPlayers(parseInt(e.target.value));
       };
   return (
-    <div className="flex flex-col justify-center w-full h-full items-center">
+    <div className="absolute w-full h-full items-center bg-red-900">
       <label htmlFor="players">Enter number of players:</label>
       <select onChange={handlePlayerChange} value={players}>
         <option value="2">2</option>
@@ -22,10 +22,9 @@ const page = () => {
         <option value="4">4</option>
       </select>
       <UsedCards />
-      <CentralDeck />
       {players === 2 && <PlayerTop />}
       {players === 3 && (
-          <>
+        <>
           <PlayerLeft />
           <PlayerRight />
         </>
@@ -37,6 +36,7 @@ const page = () => {
           <PlayerTop />
         </>
       )}
+      <CentralDeck />
       <VisibleCards />
     </div>
   )
