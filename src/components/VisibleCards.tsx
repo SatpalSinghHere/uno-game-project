@@ -28,7 +28,7 @@ const VisibleCards = () => {
   
   return (
 
-    <div className='absolute bottom-[10%] w-2/5 h-28 left-1/2 translate-x-[-50%]'>
+    <div className='absolute bottom-[5%] w-2/5 h-36 left-1/2 translate-x-[-50%]'>
       
       {cards.map((cardObject, index) => {
         // const translateX = (index + 1 - midIndex) * 28;
@@ -52,10 +52,10 @@ const VisibleCards = () => {
         // );
 
         return (
-          <div key={index} className={'h-full w-auto absolute'} style={styles} onClick={() => { usedCards(cardObject) }}>
+          <div key={index} className={'h-full w-auto absolute hover:z-[100]'} style={styles} onClick={() => { usedCards(cardObject) }}>
             <CardTemplate
 
-              className={' h-full w-auto bg-white rounded-lg hover:translate-y-[-8px] hover:scale-125 hover:z-[100] duration-75 cursor-pointer'}
+              className={' h-full w-auto bg-white rounded-lg hover:translate-y-[-8px] hover:scale-125  duration-75 cursor-pointer'}
               color={cardObject.color}
               value={cardObject.value}
             />

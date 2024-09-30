@@ -4,12 +4,14 @@ import React, { useState } from 'react'
 
 const PlayerTop = () => {
 
-  const [cards, setCards] = useState(cardList)
+  const [noOfCards, setNoOfCards] = useState(10)
+
+  const array = Array(noOfCards).fill(1)
 
   return (
-    <div className='absolute top-[10%] w-2/5 h-28 left-1/2 translate-x-[-50%]'>
+    <div className='absolute top-[5%] w-2/5 h-36 left-1/2 translate-x-[-50%]'>
       
-      {cards.map((cardObject, index) => {
+      {array.map((_, index) => {
         // const translateX = (index + 1 - midIndex) * 28;
         
 
@@ -20,7 +22,7 @@ const PlayerTop = () => {
         const translateX = index * 28;
 
         const styles = {
-          transform: `translateX(${translateX}px)`,
+          transform: `translateX(-${translateX}px)`,
           zIndex: index
         }
 
@@ -31,7 +33,7 @@ const PlayerTop = () => {
         // );
 
         return (
-          <div key={index} className={'h-full w-auto absolute'} style={styles} >
+          <div key={index} className={'h-full w-auto absolute right-0'} style={styles} >
             <CardBack className={' h-full w-auto bg-white rounded-lg hover:translate-y-[-8px] hover:scale-125 hover:z-[100] duration-75 cursor-pointer'}/>
           </div>
         );
