@@ -25,19 +25,11 @@ const VisibleCards = () => {
   };
 
 
-  useEffect(() => {
-    console.log(cards)
-    setMidIndex((Math.floor(cards.length + 1) / 2))
-  }, [cards])
+  
   return (
 
-    <div className='absolute bottom-[10%] bg-slate-500 w-2/5 h-1/5 left-1/2 translate-x-[-50%]'>
-      {/* <Card className={"h-full w-auto absolute translate-x-[-56px] hover:translate-y-[-8px] duration-75 cursor-pointer"} color={green} value={"4"} />
-      <Card className={"h-full w-auto absolute translate-x-[-28px] hover:translate-y-[-8px] duration-75 cursor-pointe"} color={blue} value={"7"} />
-      <Card className={"h-full w-auto absolute hover:translate-y-[-8px] duration-75 cursor-pointer"} color={yellow} value={"2"} />
-      <Card className={"h-full w-auto absolute translate-x-[28px] hover:translate-y-[-8px] duration-75 cursor-pointer"} color={red} value={"9"} />
-      <Card className={"h-full w-auto absolute translate-x-[56px] hover:translate-y-[-8px] duration-75 cursor-pointer"} color={green} value={"10"} />     
-      <ReverseCard className={"h-full w-auto absolute translate-x-[84px] hover:translate-y-[-8px] duration-75 cursor-pointer"} color={green} value={"10"} />      */}
+    <div className='absolute bottom-[10%] w-2/5 h-28 left-1/2 translate-x-[-50%]'>
+      
       {cards.map((cardObject, index) => {
         // const translateX = (index + 1 - midIndex) * 28;
         

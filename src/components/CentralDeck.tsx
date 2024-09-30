@@ -10,7 +10,7 @@ const CentralDeck = () => {
   const centralDeck = useSelector((state: { centralDeck: Array<Card> }) => state.centralDeck);
   console.log(centralDeck)
   return (
-    <div className='bg-slate-500 w-1/12 h-1/5 absolute bottom-[40%] left-1/2 translate-x-[-50%]'>
+    <div className='bg-slate-500 w-1/12 h-28 absolute bottom-[40%] left-1/2 translate-x-[-50%]'>
       {centralDeck.map((cardObj, index) => {
         const getRandomInt = (min:number, max:number) => Math.floor(Math.random() * (max - min)) + min;
         const degree = getRandomInt(-70,70)
