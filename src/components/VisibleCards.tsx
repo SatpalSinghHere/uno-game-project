@@ -6,20 +6,25 @@ import CardTemplate from '@/utils/Card';
 import { Card, cardList } from '@/utils/cardObjects';
 import clsx from 'clsx';
 import { useDispatch, useSelector } from 'react-redux';
+import { useMutation, useStorage } from '@liveblocks/react/suspense';
 
 const VisibleCards = () => {
   const dispatch = useDispatch();
   const [cards, setCards] = React.useState(cardList);
   const [midIndex, setMidIndex] = React.useState(0);
 
-  const centralDeck = useSelector((state: { centralDeck: Array<Card> }) => state.centralDeck);
+  const centralCard = useStorage((root) => root.centralCard);
 
-  // const divWidth = window.innerWidth * 0.4
+  const updateCentralCard = useMutation(({ storage }:{storage: any}, newCard: Card) => {
+    const thisCentralCard = storage.get("centralCard");
+    console.log(thisCentralCard)
+    thisCentralCard.set("color", newCard.color);
+    thisCentralCard.set("value", newCard.value);
+  }, []);
 
-  const usedCards = (cardObject: Card) => {
-    if(centralDeck[centralDeck.length - 1].color === cardObject.color || centralDeck[centralDeck.length - 1].value === cardObject.value){
-      setCards(cards.filter((card) => card !== cardObject));
-      dispatch({ type: 'centralDeck/addCard', payload: cardObject });
+  const useCard = (cardObject: Card) => {
+    if(centralCard.color === cardObject.color || centralCard.value === cardObject.value){
+      updateCentralCard(cardObject)
     }
     
   };
@@ -52,7 +57,7 @@ const VisibleCards = () => {
         // );
 
         return (
-          <div key={index} className={'h-full w-auto absolute hover:z-[100]'} style={styles} onClick={() => { usedCards(cardObject) }}>
+          <div key={index} className={'h-full w-auto absolute hover:z-[100]'} style={styles} onClick={() => { useCard(cardObject) }}>
             <CardTemplate
 
               className={' h-full w-auto bg-white rounded-lg hover:translate-y-[-8px] hover:scale-125  duration-75 cursor-pointer'}

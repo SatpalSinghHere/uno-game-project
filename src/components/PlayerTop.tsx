@@ -34,7 +34,7 @@ const PlayerTop = () => {
 
         return (
           <div key={index} className={'h-full w-auto absolute right-0'} style={styles} >
-            <CardBack className={' h-full w-auto bg-white rounded-lg hover:translate-y-[-8px] hover:scale-125 hover:z-[100] duration-75 cursor-pointer'}/>
+            <CardBack className={' h-full w-auto bg-white rounded-lg cursor-pointer'}/>
           </div>
         );
       })}

@@ -1,11 +1,18 @@
 import { configureStore } from '@reduxjs/toolkit'
 import centralDeckReducer from './Slice/CentralDeckSlice';
+import { createClient } from '@liveblocks/client';
+import { liveblocksEnhancer } from '@liveblocks/redux';
+
+const client = createClient({
+  publicApiKey: "pk_prod_xxxxxxxxxxxxxxxxxxxxxxxx",
+});
 
 
 export const store = configureStore({
   reducer: {
-    centralDeck: centralDeckReducer,
+    centralDeck: centralDeckReducer,    
   },
+  
 })
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
